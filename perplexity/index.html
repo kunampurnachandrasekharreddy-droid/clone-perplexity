@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perplexity - Chat AI</title>
+    <meta name="description" content="AI-powered search and chatbot interface.">
+    <!-- Google Fonts: Inter and Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="logo-container">
+                    <div class="logo-icon"></div>
+                </div>
+                <nav class="nav-links">
+                    <a href="#" class="nav-item active" id="nav-search">
+                        <i data-lucide="search"></i>
+                        <span>Search</span>
+                    </a>
+                    <a href="#" class="nav-item" id="nav-computer">
+                        <i data-lucide="monitor"></i>
+                        <span>Computer</span>
+                        <span class="badge">New</span>
+                    </a>
+                </nav>
+            </div>
+
+            <nav class="nav-links secondary-nav">
+                <a href="#" class="nav-item" title="New thread">
+                    <i data-lucide="plus-circle"></i>
+                    <span>New thread</span>
+                    <span class="shortcut">Ctrl I</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="clock"></i>
+                    <span>History</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="compass"></i>
+                    <span>Discover</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="layers"></i>
+                    <span>Spaces</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="trending-up"></i>
+                    <span>Finance</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="more-horizontal"></i>
+                    <span>More</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="recent-threads">
+                    <p class="section-title">Recent</p>
+                    <p class="empty-state">Recent and active threads will appear here.</p>
+                </div>
+                
+                <div class="user-actions">
+                    <button class="upgrade-btn">
+                        <i data-lucide="arrow-up-circle"></i>
+                        <span>Upgrade plan</span>
+                    </button>
+                    <div class="user-profile">
+                        <div class="avatar">C</div>
+                        <span class="username">chandrassekha...</span>
+                        <i data-lucide="bell" class="notif-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="pro-banner">
+                    <span class="badge">New</span>
+                    <p>Computer is now available on Pro</p>
+                    <a href="#" class="upgrade-link">Upgrade <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="header-right">
+                    <button class="icon-btn"><i data-lucide="layout-grid"></i></button>
+                </div>
+            </header>
+
+            <section class="hero-section">
+                <div id="chat-container">
+                    <h1 class="main-logo">perplexity</h1>
+                    
+                    <div id="messages-container" class="messages-container hidden">
+                        <!-- Messages will appear here -->
+                    </div>
+
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <textarea id="search-input" placeholder="Type / for search modes and shortcuts" rows="1"></textarea>
+                            
+                            <div class="search-footer">
+                                <div class="footer-left">
+                                    <button class="footer-btn" id="upload-trigger"><i data-lucide="plus"></i></button>
+                                <input type="file" id="file-input" accept=".pdf" style="display: none;">
+                                <div id="file-preview" class="file-preview hidden">
+                                    <i data-lucide="file-text"></i>
+                                    <span id="file-name"></span>
+                                    <button id="remove-file"><i data-lucide="x"></i></button>
+                                </div>
+                                <button class="footer-btn computer-mode">
+                                        <i data-lucide="monitor"></i>
+                                        <span>Computer</span>
+                                        <i data-lucide="plus" class="small-plus"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="footer-right">
+                                    <div class="model-selector">
+                                        <span>Model</span>
+                                        <i data-lucide="chevron-down"></i>
+                                    </div>
+                                    <button class="footer-btn" id="mic-btn"><i data-lucide="mic"></i></button>
+                                    <button class="submit-btn"><i data-lucide="arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
